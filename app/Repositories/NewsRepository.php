@@ -6,5 +6,5 @@ use App\Models\ArticlesCollection;
 
 interface NewsRepository
 {
-    public function getAll(): ArticlesCollection;
+    public function getAllByCategory(string $category): ArticlesCollection;
 }

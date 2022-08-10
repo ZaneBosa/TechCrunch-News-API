@@ -5,12 +5,12 @@
     <title>Top headlines from TechCrunch right now</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[length:200px_200px] hover:bg-auto" style="background-image:url('/app/Views/cover.jpg'); height: 50vh; max-height:600px;">
+<body class="bg-[length:200px_200px] hover:bg-auto" style="background-image:url('/Views/lightergreenpatternpng.png'); height: 50vh; max-height:600px;">
 <div class="container max-w-4xl mx-auto pt-16 md:pt-25 text-center break-normal">
     <section class="flex justify-center mt-0">
         <div class="w-full bg-cyan-700/75 text-center justify-center">
-            <p class="text-orange-50 font-extrapolated md:text-5xl">Top Headlines From TechCrunch Right Now</p>
-            <p class="text-orange-50 font-extrapolated md:text-sm">and keep being up to date with their latest articles </p>
+            <nav class="text-orange-50 font-extrapolated md:text-5xl">Top Headlines From TechCrunch Right Now</nav>
+            <p class="text-orange-50 font-extrapolated md:text-sm">keep being up to date with their latest articles </p>
         </div>
     </section>
 </div>
@@ -39,6 +39,13 @@
                 </div>
             </div>
         </nav>
+
+        <ul>
+            <form method="post" action="/articles">
+                <input type="text" name="name">
+                <buttom type="submit">Submit</buttom>
+            </form>
+        </ul>
         {% for article in articles %}
         <div class="flex flex-wrap justify-between pt-12 pt-mx-6">
             <a href="{{ article.getUrl}}" class="flex flex-wrap no-underline hover:no-underline">

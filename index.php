@@ -12,7 +12,8 @@ $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/news', 'App\Controllers\NewsController@show');
+    $r->addRoute('GET', '/', 'App\Controllers\NewsController@show');
+    $r->addRoute('GET', '/articles/create', 'App\Controllers\NewsController@show');
 });
 
 $httpMethod = $_SERVER['REQUEST_METHOD'];

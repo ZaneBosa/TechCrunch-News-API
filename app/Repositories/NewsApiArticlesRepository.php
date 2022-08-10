@@ -12,10 +12,11 @@ class NewsApiArticlesRepository implements NewsRepository
     /**
      * @throws GuzzleException
      */
-    public function getAll(): ArticlesCollection
+    public function getAllByCategory(string $category): ArticlesCollection
     {
+        $category = $_GET['category'] ?? 'TechCrunch';
         $client = new Client();
-        $response = $client->request('GET', $_ENV['NEWS_API_URL'] . '/top-headlines?sources=TechCrunch&apiKey=' . $_ENV['NEWS_API_KEY']);
+        $response = $client->request('GET', $_ENV['NEWS_API_URL'] . "/top-headlines?sources=$category&apiKey={$_ENV['NEWS_API_KEY']}");
         $body = $response->getBody();
         $apiResponse = json_decode($body);
 
